@@ -51,6 +51,7 @@ namespace U3RazasPerros.Areas.Admin.Controllers
             {
                 ModelState.AddModelError("", "Es necesario un ID");
             }
+
             if (string.IsNullOrWhiteSpace(vm.Razas.Nombre))
             {
                 ModelState.AddModelError("", "El nombre no pude estar en blanco");
