@@ -1,0 +1,31 @@
+﻿@model U3RazasPerros.Models.Razas
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "MasterPage";
+}
+
+<h1>Eliminar</h1>
+<form method="post" action="~/Admin/Admin/Eliminar">
+    <div>
+        <h1>Eliminar Raza</h1>
+
+        <input type="hidden" id="id" asp-for="Id" />
+
+        <p>¿Está seguro de eliminar la raza  "<span id="nombrePais">@Model.Nombre</span>"?</p>
+
+        <div class="botones">
+            <p id="error">
+                @Html.ValidationSummary()
+            </p>
+            <input type="submit" value="Si" id="btnSi" />
+
+            <a href="~/Admin/Productos">
+                ,=<input type="button" value="No" id="btnNo" />
+            </a>
+
+            <input type="button" value="No" id="btnNo" formnovalidate="formnovalidate" />
+        </div>
+    </div>
+</form>
+

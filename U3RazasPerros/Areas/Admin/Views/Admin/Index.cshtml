@@ -1,0 +1,39 @@
+﻿@model U3RazasPerros.Areas.Admin.Models.ViewModels.RazasIndexViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "MasterPage";
+}
+
+<h2>Lista de razas de perros</h2>
+<section>
+    <a href="~/Admin/Admin/Agregar" class="button">&#43; AGREGAR</a>
+        <table class="tablaAdmin">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>RAZA</td>
+                    <td></td>
+                    <td>EDITAR</td>
+                    <td>ELIMINAR</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Razas)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Nombre</td>
+                        <td>
+                            <img src="~/imgs_perros/@(item.Id)_0.jpg" height="80" width="130" />
+                        </td>
+                        <td>
+                            <a href="~/Admin/Admin/Editar/@(item.Id)">&#9998;</a>
+                        </td>
+                        <td>
+                            <a href="~/Admin/Admin/Eliminar/@(item.Id)">&#9587;</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+</section>
