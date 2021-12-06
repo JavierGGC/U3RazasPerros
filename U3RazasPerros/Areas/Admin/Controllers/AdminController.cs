@@ -190,8 +190,9 @@ namespace U3RazasPerros.Areas.Admin.Controllers
                 {
                     System.IO.File.Delete(path);
                 }
+                return RedirectToAction("Index", "Admin");
             }
-            return View();
+            return View(r);
         }
     }
 }
