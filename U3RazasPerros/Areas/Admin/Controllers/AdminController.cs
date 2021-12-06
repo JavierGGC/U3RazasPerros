@@ -97,6 +97,7 @@ namespace U3RazasPerros.Areas.Admin.Controllers
             {
                 return RedirectToAction("Index", "Admin");
             }
+            vm.Razas = raza;
             vm.Paises = Context.Paises.OrderBy(x => x.Nombre);
             return View(vm);
         }
