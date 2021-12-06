@@ -11,8 +11,10 @@
         <h1>Eliminar Raza</h1>
 
         <input type="hidden" id="id" asp-for="Id" />
+        <input type="hidden" id="id" asp-for="Caracteristicasfisicas" />
+        <input type="hidden" id="id" asp-for="IdPaisNavigation.Id" />
 
-        <p>¿Está seguro de eliminar la raza  "<span id="nombrePais">@Model.Nombre</span>"?</p>
+        <p>¿Está seguro de eliminar la raza: "<span id="nombrePais">@Model.Nombre</span>"?</p>
 
         <div class="botones">
             <p id="error">
@@ -20,11 +22,9 @@
             </p>
             <input type="submit" value="Si" id="btnSi" />
 
-            <a href="~/Admin/Productos">
-                ,=<input type="button" value="No" id="btnNo" />
+            <a href="~/Admin/Admin/Index">
+                <input type="button" value="No" id="btnNo" />
             </a>
-
-            <input type="button" value="No" id="btnNo" formnovalidate="formnovalidate" />
         </div>
     </div>
 </form>

@@ -144,7 +144,7 @@ namespace U3RazasPerros.Areas.Admin.Controllers
                 if (archivo1 != null)
                 {
                     var path = Host.WebRootPath + "/imgs_perros/" + vm.Razas.Id + "_0.jpg";
-                    FileStream fs = new FileStream(path, FileMode.Create);
+                    FileStream fs = System.IO.File.Create(path);
                     archivo1.CopyTo(fs);
                     fs.Close();
                 }
